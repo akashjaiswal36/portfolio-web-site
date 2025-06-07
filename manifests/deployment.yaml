@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: portfolio-app
-        image: ajs3ra8/portfolio-web-site:20
+        image: ajs3ra8/portfolio-web-site:21
         ports:
         - containerPort: 80
