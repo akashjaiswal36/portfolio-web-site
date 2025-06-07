@@ -26,7 +26,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/portfolio-web-site:${{ github.run_number }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-web-site:${{ github.run_number }}
 
   update-newtag-in-helm-chart:
     runs-on: ubuntu-latest
