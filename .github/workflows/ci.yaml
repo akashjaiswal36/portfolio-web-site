@@ -41,7 +41,7 @@ jobs:
       - name: Update tag in deployment
         run: |
           echo "GitHub Run Number: ${{ github.run_number }}"
-          cp -f deployment.yaml portfolio-web-site/manifests/
+          cp -f deployment.yaml manifests/
           sed -i "s/replaceImageTag/${{ github.run_number }}/g" portfolio-web-site/manifests/deployment.yaml
 
       - name: Commit and push changes
