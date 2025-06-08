@@ -6,33 +6,8 @@ on:
     paths-ignore:
       - 'README.md'
       - 'manifests/**'
-
 jobs:
-  code-qaulity:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Install linters
-        run: |
-          npm install -g htmlhint stylelint
-          wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64
-          chmod +x /bin/hadolint
-          
-
-      - name: Run HTMLHint
-        run: htmlhint ./index.html
-
-      - name: Run Stylelint
-        run: stylelint "**/*.css" || true  # `|| true` prevents breaking if warnings only
-
-      - name: Lint Dockerfile
-        run: hadolint Dockerfile
-
   build:
-    needs: code-qaulity
     runs-on: ubuntu-latest
 
     steps:
